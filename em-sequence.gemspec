@@ -18,10 +18,12 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.md",
     "Rakefile",
     "VERSION",
+    "em-sequence.gemspec",
     "lib/em-sequence.rb",
     "lib/em-sequence/block.rb",
     "lib/em-sequence/method.rb",
