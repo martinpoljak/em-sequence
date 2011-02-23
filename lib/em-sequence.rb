@@ -118,7 +118,7 @@ module EM
         #
         
         def variable(name, value)
-            @args[name] = value
+            @vars[name] = value
         end
         
         alias :var :variable
@@ -147,7 +147,7 @@ module EM
         #   item of the sequence
         #
         
-        def run(&callback)
+        def run!(&callback)
             worker = Proc::new do
                 if not @stack.empty?
                     @stack.shift.call(@vars) do |result, returning|
@@ -165,30 +165,3 @@ module EM
         end
     end
 end
-
-=begin
-EM::run do
-    bar = EM::Sequence::new(Foo::new)
-
-    bar.declare do
-        # variable declaration
-        variable :var, 3
- 
-        # method call declaration
-        some_method(:var) { [:x, :y] }
- 
-        # inline block declaration and definition
-        block(:x, :y) do |x, y|
-            {:x => x + 1, :y => y + 1}
-        end
- 
-        # some other methods
-        other_method(:x, :y) { :x }
-        another_method(:x)
-    end 
-    
-    bar.run do |result|
-        puts result.inspect
-    end
-end
-=end
