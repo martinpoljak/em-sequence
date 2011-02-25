@@ -3,7 +3,7 @@
 
 ##
 # Main EventMachine module.
-# @see
+# @see http://rubyeventmachine.com/
 #
 
 module EM

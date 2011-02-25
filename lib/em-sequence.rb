@@ -8,7 +8,7 @@ require 'em-sequence/method'
 
 ##
 # Main EventMachine module.
-# @see
+# @see http://rubyeventmachine.com/
 #
 
 module EM
