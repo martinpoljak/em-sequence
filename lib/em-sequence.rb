@@ -56,6 +56,7 @@ module EM
         ##
         # Constructor.
         # @param [Object] target target instance for the sequence
+        #
         
         def initialize(target)
             @target = target
@@ -162,6 +163,20 @@ module EM
             end
             
             worker.call()
+        end
+        
+        ##
+        # Declares and runs specified block in one call. Useful if you
+        # don't expect any results.
+        #
+        # @param [Object] target target instance for the sequence
+        # @param [Proc] block sequence declaration
+        # @see #declare
+        # @since 0.1.1
+        #
+        
+        def self.run(target, &block)
+            self::new(target).declare(&block).run!
         end
     end
 end

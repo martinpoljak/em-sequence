@@ -67,6 +67,10 @@ non-multiplexed (and non-callbacked calculator):
                                                         #   |
     puts result.inspect                                 #   V
     
+If you don't expect any result, you can simply call:
+    EM::Sequence::run(Calculator::new) do
+        # some declaration, see above
+    end
     
 Contributing
 ------------
