@@ -6,7 +6,8 @@ concurrency. Runs declared methods and blocks in sequence, each in one
 tick. So allows calls chaining with keeping the EventMachine multiplexing 
 facility on. 
 
-See an example. For first, define some (of sure, slightly non-sense) calculator class:
+See an example. For first, let's define some (of sure, slightly 
+non-sense) calculator class:
 
     class Calculator
         def some_method(var, &block)
