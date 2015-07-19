@@ -5,7 +5,6 @@
 $:.push("./lib")
 
 require 'eventmachine'
-require 'hash-utils/hash'
 require 'em-sequence'
 require 'riot'
 

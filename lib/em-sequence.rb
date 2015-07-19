@@ -2,7 +2,6 @@
 # (c) 2011 Martin Kozák
 
 require 'eventmachine'
-require 'hash-utils/hash'
 require 'em-sequence/block'
 require 'em-sequence/method'
 

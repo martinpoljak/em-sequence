@@ -78,7 +78,7 @@ module EM
             def call(vars, &block)
                 call_args = vars.values_at(*@args)
                 @target.send(@name, *call_args) do |*returns|
-                    result = Hash::combine(self.meta, returns)
+                    result = __combine(self.meta, returns)
                     block.call(result, returns.first)
                 end
             end
@@ -100,7 +100,19 @@ module EM
                 
                 return @meta
             end
+            
+            
+            private 
+            
+            def __combine(keys, values)
+                result = { }
+                keys.each_index do |i|
+                    result[keys[i]] = values[i]
+                end
+                
+                return result
+            end
+            
         end
     end
 end
-
